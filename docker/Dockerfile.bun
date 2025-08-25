@@ -1,1 +1,1 @@
-FROM ghcr.io/dependabot/dependabot-updater-bun:v2.0.20250708095246@sha256:43d8eb96f57eb5e11fa3dc0e26d5d81958c48ccad3487640de595956a4a92c8b
+FROM reg-ghcrio.artifactory-de.asml.com/dependabot/dependabot-updater-bun:v2.0.20250708095246@sha256:43d8eb96f57eb5e11fa3dc0e26d5d81958c48ccad3487640de595956a4a92c8b
