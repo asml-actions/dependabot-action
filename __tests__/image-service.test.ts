@@ -10,7 +10,7 @@ describe('ImageService', () => {
     test('it raises an error', async () => {
       await expect(ImageService.pull('hello-world')).rejects.toThrowError(
         new Error(
-          'Only images distributed via docker.pkg.github.com or ghcr.io can be fetched'
+          'Only images distributed via docker.pkg.github.com or reg-ghcrio.artifactory-de.asml.com can be fetched'
         )
       )
     })
@@ -35,7 +35,7 @@ describe('ImageService.fetchImageWithRetry', () => {
 
     getImageMock = jest.fn().mockImplementation(() => ({
       inspect: jest.fn().mockResolvedValue({
-        RepoDigests: ['ghcr.io/dependabot/dependabot-updater-npm:latest']
+        RepoDigests: ['reg-ghcrio.artifactory-de.asml.com/dependabot/dependabot-updater-npm:latest']
       }),
       remove: jest.fn(),
       history: jest.fn(),
@@ -80,7 +80,7 @@ describe('ImageService.fetchImageWithRetry', () => {
 
     await expect(
       ImageService.fetchImageWithRetry(
-        'ghcr.io/dependabot/dependabot-updater-npm',
+        'reg-ghcrio.artifactory-de.asml.com/dependabot/dependabot-updater-npm',
         {},
         docker,
         sendMetricsMock,
@@ -99,7 +99,7 @@ describe('ImageService.fetchImageWithRetry', () => {
 
     await expect(
       ImageService.fetchImageWithRetry(
-        'ghcr.io/dependabot/dependabot-updater-npm',
+        'reg-ghcrio.artifactory-de.asml.com/dependabot/dependabot-updater-npm',
         {},
         docker,
         sendMetricsMock,
@@ -115,7 +115,7 @@ describe('ImageService.fetchImageWithRetry', () => {
 
     await expect(
       ImageService.fetchImageWithRetry(
-        'ghcr.io/dependabot/dependabot-updater-npm',
+        'reg-ghcrio.artifactory-de.asml.com/dependabot/dependabot-updater-npm',
         {},
         docker,
         sendMetricsMock,
@@ -135,7 +135,7 @@ describe('ImageService.fetchImageWithRetry', () => {
 
     await expect(
       ImageService.fetchImageWithRetry(
-        'ghcr.io/dependabot/dependabot-updater-npm',
+        'reg-ghcrio.artifactory-de.asml.com/dependabot/dependabot-updater-npm',
         {},
         docker,
         undefined, // explicitly pass undefined for sendMetrics

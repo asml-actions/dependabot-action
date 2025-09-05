@@ -1,1 +1,1 @@
-FROM ghcr.io/dependabot/dependabot-updater-swift:v2.0.20250708095246@sha256:23b0435636a0b87ed10661444827d5d384973eae0946160e546019fc776521ae
+FROM reg-ghcrio.artifactory-de.asml.com/dependabot/dependabot-updater-swift:v2.0.20250708095246@sha256:23b0435636a0b87ed10661444827d5d384973eae0946160e546019fc776521ae

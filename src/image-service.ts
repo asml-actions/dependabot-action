@@ -25,7 +25,7 @@ export type MetricReporter = (
 
 export function getOrgFromImage(imageName: string): string {
   const parts = imageName.split('/')
-  if (parts.length >= 3 && parts[0] === 'ghcr.io') {
+  if (parts.length >= 3 && parts[0] === 'reg-ghcrio.artifactory-de.asml.com') {
     return parts[1] // The domain is always the second part
   }
   return 'unknown' // Fallback case if structure is unexpected
@@ -45,12 +45,12 @@ export const ImageService = {
     */
     if (
       !(
-        imageName.startsWith('ghcr.io/') ||
+        imageName.startsWith('reg-ghcrio.artifactory-de.asml.com/') ||
         imageName.startsWith('docker.pkg.github.com/')
       )
     ) {
       throw new Error(
-        'Only images distributed via docker.pkg.github.com or ghcr.io can be fetched'
+        'Only images distributed via docker.pkg.github.com or reg-ghcrio.artifactory-de.asml.com can be fetched'
       )
     }
 
